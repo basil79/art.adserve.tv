@@ -64,7 +64,7 @@
         
         <div class="hero-buttons">
             <a href="#blog" class="btn btn-primary">Read the Blog</a>
-            <a href="index.html?category=AI%20Tools#blog" class="btn btn-secondary" aria-label="Explore AI tools articles">Explore Tools</a>
+            <a href="index.html?category=AI%20Tools" class="btn btn-primary" aria-label="Open blog filtered by AI Tools">Explore Tools</a>
         </div>
     </div>
 </section>
@@ -365,7 +365,7 @@
     const searchInput = document.querySelector('.search-input');
     const categoryFilterLinks = Array.from(document.querySelectorAll('.categories-list a'));
     const tagFilterLinks = Array.from(document.querySelectorAll('.popular-tags-list a'));
-    const filterLinks = [...categoryFilterLinks, ...tagFilterLinks, document.querySelector('.hero-buttons .btn-secondary')].filter(Boolean);
+    const filterLinks = [...categoryFilterLinks, ...tagFilterLinks].filter(Boolean);
 
     function normalizeValue(value) {
         return (value || '').trim().toLowerCase();
@@ -436,12 +436,24 @@
 
         categoryFilterLinks.forEach(link => {
             const linkFilters = getLinkFilters(link);
-            link.classList.toggle('is-active-filter', !!currentFilters.category && linkFilters.category === currentFilters.category);
+            const isActive = !!currentFilters.category && linkFilters.category === currentFilters.category;
+            link.classList.toggle('is-active-filter', isActive);
+            if (isActive) {
+                link.setAttribute('aria-current', 'true');
+            } else {
+                link.removeAttribute('aria-current');
+            }
         });
 
         tagFilterLinks.forEach(link => {
             const linkFilters = getLinkFilters(link);
-            link.classList.toggle('is-active-filter', !!currentFilters.tag && linkFilters.tag === currentFilters.tag);
+            const isActive = !!currentFilters.tag && linkFilters.tag === currentFilters.tag;
+            link.classList.toggle('is-active-filter', isActive);
+            if (isActive) {
+                link.setAttribute('aria-current', 'true');
+            } else {
+                link.removeAttribute('aria-current');
+            }
         });
     }
 
