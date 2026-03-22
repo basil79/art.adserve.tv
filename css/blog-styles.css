@@ -596,10 +596,13 @@
 }
 a {
     color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
-    text-decoration: underline
+    text-decoration: underline;
+    transition: all 0.2s ease;
+    text-underline-offset: 2px;
 }
 a:hover {
-    --bs-link-color-rgb: var(--bs-link-hover-color-rgb)
+    --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+    text-underline-offset: 3px;
 }
 a.btn {
     text-decoration: none;
