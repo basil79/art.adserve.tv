@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>About - Art - AdServe</title>
+    <meta name="description" content="Hi, I'm a Creative Artist — blending traditional painting with the magic of Artificial Intelligence.">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog-styles.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQFYT0TFE0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-SQFYT0TFE0');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8886203596762131"
+            crossorigin="anonymous"></script>
+    <style>
+        .about-page {
+            padding: 110px 0 72px;
+            background:
+                radial-gradient(circle at top right, rgba(95, 135, 220, 0.16), transparent 28%),
+                linear-gradient(180deg, #f5f8fc 0%, #ffffff 40%);
+        }
+
+        h1 {
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .about-shell {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-panel {
+            background: #ffffff;
+            border: 1px solid #e6edf7;
+            border-radius: 22px;
+            box-shadow: 0 18px 42px rgba(18, 33, 58, 0.08);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .about-hero {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f7faff 100%);
+        }
+
+        .about-text {
+            max-width: 480px;
+        }
+
+        .about-hero-copy h1 {
+            margin: 0 0 14px;
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
+            color: #2f3a4a;
+        }
+
+        .about-hero-copy p {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #516070;
+            max-width: 580px;
+        }
+
+        .sparkle {
+            display: inline-block;
+            animation: sparkleAnim 2.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkleAnim {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.3) rotate(15deg);
+                opacity: 1;
+            }
+        }
+
+        .about-hero-note {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6a7788;
+        }
+
+        .about-hero-image-wrap {
+            position: relative;
+        }
+
+        .about-image img {
+            transform: translateY(0);
+            transition: transform 0.4s ease;
+        }
+
+        .about-image img:hover {
+            transform: translateY(-6px);
+        }
+
+        .about-hero-image-wrap::before {
+            content: "";
+            position: absolute;
+            inset: 14px -12px -14px 12px;
+            background: linear-gradient(135deg, rgba(79, 127, 216, 0.18), rgba(148, 178, 236, 0.06));
+            border-radius: 26px;
+            z-index: 0;
+        }
+
+        .about-hero-image {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+            background: #edf2f9;
+            box-shadow: 0 16px 34px rgba(21, 42, 74, 0.14);
+        }
+
+        .about-content {
+            padding: 0 40px 40px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+        }
+
+        .about-me {
+            margin-top: 40px;
+        }
+
+        .about-story,
+        .about-social {
+            padding-top: 12px;
+        }
+
+        .about-story h2,
+        .about-social h2 {
+            margin: 0 0 16px;
+            font-size: 28px;
+            color: #10233e;
+        }
+
+        .about-story p,
+        .about-social p {
+            margin: 0 0 16px;
+            font-size: 16px;
+            line-height: 1.9;
+            color: #516070;
+        }
+
+        .about-highlights {
+            margin: 28px 0;
+            padding: 22px 24px;
+            border-radius: 18px;
+            background: linear-gradient(180deg, #f8fbff 0%, #f2f7ff 100%);
+            border: 1px solid #e5edf8;
+        }
+
+        .about-highlights h3 {
+            margin: 0 0 14px;
+            font-size: 20px;
+            color: #173054;
+        }
+
+        .about-highlights ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .about-highlights li {
+            position: relative;
+            padding-left: 30px;
+            line-height: 1.75;
+            color: #415062;
+        }
+
+        .about-highlights li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4f7fd8, #7aa5f2);
+            box-shadow: 0 0 0 5px rgba(79, 127, 216, 0.14);
+        }
+
+        .social-links-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 14px 0 0;
+        }
+
+        .social-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #163154;
+            background: #f6f9fe;
+            border: 1px solid #dce7f6;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .social-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+
+        .social-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(26, 56, 98, 0.12);
+            background: #ffffff;
+        }
+
+        .social-pill i {
+            color: #4f7fd8;
+        }
+
+        @media (max-width: 900px) {
+            .about-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero-image {
+                min-height: 340px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .about-page {
+                padding-top: 92px;
+            }
+
+            .about-hero,
+            .about-content {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .about-hero-copy h1 {
+                font-size: 31px;
+            }
+
+            .about-hero-copy p,
+            .about-story p,
+            .about-social p,
+            .about-highlights li {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main bg-navbar">
+    <div class="container">
+        <div class="navbar">
+            <a href="/" class="logo">Art</a>
+            <button class="navbar-toggler" id="navbarToggle">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+            <nav class="navbar-menu" id="navbarMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdca3EG_1yz9-4LVVcBZksqA2YZ8BaPkLkVDy7zw6zf9t6VEg/viewform" target="_blank" rel="noopener">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<section class="about-page">
+    <div class="about-shell">
+        <div class="about-panel">
+            <section class="about-hero">
+                <div class="about-hero-image-wrap about-image">
+                    <img src="images/about-me.jpg" alt="Creative Artist portrait" class="about-hero-image">
+                </div>
+                <div class="about-hero-copy about-text">
+                    <h1>Welcome to my creative world <span class="sparkle">✨</span></h1>
+                    <p>Blending the soul of traditional painting with the magic of Artificial Intelligence.</p>
+                    <p class="about-hero-note">Creating gentle digital worlds ✨</p>
+                </div>
+            </section>
+
+            <div class="about-content">
+                <section class="about-story about-section about-me">
+                    <h2>About Me</h2>
+                    <p>For years, I've had paint on my hands and curiosity in my heart. What started as a love for acrylic painting on canvas slowly expanded into the world of digital technology — and eventually, into the fascinating universe of artificial intelligence.</p>
+                    <p>I've always believed that creativity has no boundaries. Whether I'm mixing colors on a real canvas or sculpting prompts for a neural network, the feeling is the same — something magical is about to happen.</p>
+                    <p>Today, I combine traditional art with digital creation. I watch characters come to life from a simple idea, see imaginary worlds take shape through AI tools, and discover new ways to tell visual stories every single day. There is nothing quite like the moment an AI-generated character moves for the first time — watching a static idea take its first breath never gets old!</p>
+                    <p>I live in Slovakia and love exploring Europe — each journey brings new inspiration for colors, stories, and characters. My little hedgehogs, a lonely saxophonist, and dancing fairies all carry pieces of places and moments I've collected along the way.</p>
+                    <p>I share my work on Facebook and Instagram, and I write about the creative process right here on this blog — how content is made, which tools I use, what works and what hilariously doesn't. I’ve spent countless hours 'negotiating' with AI models to get the physics just right—so you don't have to.</p>
+
+                    <div class="about-highlights">
+                        <h3>What you'll find here</h3>
+                        <ul>
+                            <li>Honest reviews and guides on AI tools like Kling AI, Luma Dream Machine, and ChatGPT</li>
+                            <li>Behind-the-scenes of how animated reels are created from scratch</li>
+                            <li>The story of blending traditional painting with digital art</li>
+                            <li>Tips, prompts, and ideas for your own creative journey</li>
+                        </ul>
+                    </div>
+
+                    <p>Whether you're a curious beginner or an experienced creator — you're in the right place.</p>
+                </section>
+
+                <section class="about-social about-section">
+                    <h2>Find me on</h2>
+                    <p>Facebook and Instagram</p>
+                    <div class="social-links-row">
+                        <a href="https://www.facebook.com/profile.php?id=61588265906757" target="_blank" rel="noopener" class="social-pill social-button">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/europeanwalks/" target="_blank" rel="noopener" class="social-pill social-button">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3 class="footer-title">Art - AdServe</h3>
+            <p class="footer-description">Discover creative excellence and innovative solutions.</p>
+        </div>
+        <div class="footer-section">
+            <h4 class="footer-subtitle">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdca3EG_1yz9-4LVVcBZksqA2YZ8BaPkLkVDy7zw6zf9t6VEg/viewform" target="_blank" rel="noopener">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4 class="footer-subtitle">Follow Us</h4>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/europeanwalks/" class="social-icon" title="Instagram" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61588265906757" class="social-icon" title="Facebook" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://youtube.com" class="social-icon" title="YouTube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://pinterest.com" class="social-icon" title="Pinterest" target="_blank">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 AdServe.TV. All rights reserved. <a href="https://adserve.tv/privacy-policy/">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+    const navbarToggle = document.getElementById('navbarToggle');
+    const navbarMenu = document.getElementById('navbarMenu');
+    const bgNavbar = document.querySelector('.bg-navbar');
+    const navLinks = navbarMenu.querySelectorAll('.nav-link');
+
+    navbarToggle.addEventListener('click', function() {
+        navbarToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navbarToggle.classList.remove('active');
+            navbarMenu.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.navbar')) {
+            navbarToggle.classList.remove('active');
+            navbarMenu.classList.remove('active');
+        }
+    });
+
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.pageYOffset;
+        if (scrollPosition > 50) {
+            bgNavbar.classList.add('scrolled');
+        } else {
+            bgNavbar.classList.remove('scrolled');
+        }
+    });
+</script>
+<script src="/js/dsp3.js?v=3"></script>
+</body>
+</html>
