@@ -121,7 +121,7 @@ const isMobileView = () => {
 
     const adSlot1 = document.getElementById('ad-slot-1'); // 728x90
     const adSlot2 = document.getElementById('ad-slot-2'); // 728x90
-    const adSlot3 = document.getElementById('ad-slot-2'); // 728x90
+    const adSlot3 = document.getElementById('ad-slot-3'); // 728x90
 
     let adSlot4 = null; // 320x50
     // sticky bottom
@@ -573,7 +573,9 @@ const isMobileView = () => {
                 console.log('DSP 2 is ready');
                 console.log('DSP 2 version is', displayAdsManager2.getVersion());
 
-                if(slot4) {
+                if(slot3) {
+                    load3();
+                } else if(slot4) {
                     load4();
                 } else {
                     // run visibility checker
