@@ -128,11 +128,16 @@
             z-index: 1;
             width: 100%;
             min-height: 420px;
+            height: auto;
             object-fit: cover;
             border-radius: 20px;
             display: block;
             background: #edf2f9;
             box-shadow: 0 16px 34px rgba(21, 42, 74, 0.14);
+        }
+
+        picture {
+            display: block;
         }
 
         .about-content {
@@ -255,6 +260,12 @@
             }
         }
 
+        @media (max-width: 767px) {
+            .about-hero-image {
+                min-height: auto;
+            }
+        }
+
         @media (max-width: 700px) {
             .about-page {
                 padding-top: 92px;
@@ -284,13 +295,13 @@
     <div class="container">
         <div class="navbar">
             <a href="/" class="logo">Art</a>
-            <button class="navbar-toggler" id="navbarToggle">
+            <button class="navbar-toggler mobile-menu-toggle" id="navbarToggle">
                 <span class="icon-bar top-bar"></span>
                 <span class="icon-bar middle-bar"></span>
                 <span class="icon-bar bottom-bar"></span>
             </button>
             <nav class="navbar-menu" id="navbarMenu">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav nav-menu">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -306,7 +317,10 @@
         <div class="about-panel">
             <section class="about-hero">
                 <div class="about-hero-image-wrap about-image">
-                    <img src="images/about-me.jpg" alt="Creative Artist portrait" class="about-hero-image">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="images/about-me-mobil.jpg">
+                        <img src="images/about-me.jpg" alt="Creative Artist portrait" class="about-hero-image">
+                    </picture>
                 </div>
                 <div class="about-hero-copy about-text">
                     <h1>Welcome to my creative world <span class="sparkle">✨</span></h1>
@@ -392,18 +406,21 @@
 <script>
     const navbarToggle = document.getElementById('navbarToggle');
     const navbarMenu = document.getElementById('navbarMenu');
+    const navMenu = document.querySelector('.nav-menu');
     const bgNavbar = document.querySelector('.bg-navbar');
     const navLinks = navbarMenu.querySelectorAll('.nav-link');
 
     navbarToggle.addEventListener('click', function() {
         navbarToggle.classList.toggle('active');
         navbarMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
 
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navbarToggle.classList.remove('active');
             navbarMenu.classList.remove('active');
+            navMenu.classList.remove('active');
         });
     });
 
@@ -411,6 +428,7 @@
         if (!event.target.closest('.navbar')) {
             navbarToggle.classList.remove('active');
             navbarMenu.classList.remove('active');
+            navMenu.classList.remove('active');
         }
     });
 

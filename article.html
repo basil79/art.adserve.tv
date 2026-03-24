@@ -27,13 +27,13 @@
     <div class="container">
         <div class="navbar">
             <a href="/" class="logo">Art</a>
-            <button class="navbar-toggler" id="navbarToggle">
+            <button class="navbar-toggler mobile-menu-toggle" id="navbarToggle">
                 <span class="icon-bar top-bar"></span>
                 <span class="icon-bar middle-bar"></span>
                 <span class="icon-bar bottom-bar"></span>
             </button>
             <nav class="navbar-menu" id="navbarMenu">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav nav-menu">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -198,7 +198,7 @@
         <div class="related-grid">
             <article class="related-card">
                 <div class="related-image">
-                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=250&fit=crop" alt="Related Article">
+                    <img src="images/4.jpg" alt="Related Article">
                 </div>
                 <h3 class="related-card-title">Building a Meditation Practice for Beginners</h3>
                 <a href="index.html#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
@@ -206,7 +206,7 @@
 
             <article class="related-card">
                 <div class="related-image">
-                    <img src="https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=400&h=250&fit=crop" alt="Related Article">
+                    <img src="images/hedgehogs-breakfast.jpg" alt="Related Article">
                 </div>
                 <h3 class="related-card-title">The Power of Self-Care Rituals</h3>
                 <a href="index.html#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
@@ -214,7 +214,7 @@
 
             <article class="related-card">
                 <div class="related-image">
-                    <img src="https://images.unsplash.com/photo-1506439772649-6e0eb8cfb237?w=400&h=250&fit=crop" alt="Related Article">
+                    <img src="images/florence-dawn.jpg" alt="Related Article">
                 </div>
                 <h3 class="related-card-title">10 Nature-Based Ways to Reduce Stress</h3>
                 <a href="index.html#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
@@ -260,12 +260,14 @@
     // Mobile menu toggle
     const navbarToggle = document.getElementById('navbarToggle');
     const navbarMenu = document.getElementById('navbarMenu');
+    const navMenu = document.querySelector('.nav-menu');
     const bgNavbar = document.querySelector('.bg-navbar');
     const navLinks = navbarMenu.querySelectorAll('.nav-link');
 
     navbarToggle.addEventListener('click', function() {
         navbarToggle.classList.toggle('active');
         navbarMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
 
     // Close menu when a link is clicked
@@ -273,6 +275,7 @@
         link.addEventListener('click', function() {
             navbarToggle.classList.remove('active');
             navbarMenu.classList.remove('active');
+            navMenu.classList.remove('active');
         });
     });
 
@@ -281,6 +284,7 @@
         if (!event.target.closest('.navbar')) {
             navbarToggle.classList.remove('active');
             navbarMenu.classList.remove('active');
+            navMenu.classList.remove('active');
         }
     });
 

@@ -27,13 +27,13 @@
     <div class="container">
         <div class="navbar">
             <a href="/" class="logo">Art</a>
-            <button class="navbar-toggler" id="navbarToggle">
+            <button class="navbar-toggler mobile-menu-toggle" id="navbarToggle">
                 <span class="icon-bar top-bar"></span>
                 <span class="icon-bar middle-bar"></span>
                 <span class="icon-bar bottom-bar"></span>
             </button>
             <nav class="navbar-menu" id="navbarMenu">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav nav-menu">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -78,6 +78,23 @@
         </div>
         <div class="blog-wrapper">
             <div class="blog-grid">
+            <!-- Article Card 13 - AI Tools Guide (March 23) -->
+            <article class="blog-card" data-category="AI Tools" data-tags="AI Tools,Video AI,Image AI,Assistants,Audio,Tutorials,Workflow,AI" data-content="ai tools guide kling capcut midjourney suno deepseek gemini claude video generation image generation assistants music">
+                <div class="card-image">
+                    <img src="images/hedgehogs-in-hand.jpg" alt="AI Universe 2026: A Quick Guide to the Best Tools for Creators">
+                    <span class="card-category">AI Tools</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">AI Universe 2026: A Quick Guide to the Best Tools for Creators</h3>
+                    <p class="card-description">Lost in the sea of AI tools? I tested dozens so you don't have to. Here is my essential AI stack for 2026.</p>
+                    <div class="card-meta">
+                        <span class="card-date"><i class="far fa-calendar"></i> March 23, 2026</span>
+                        <span class="card-reading-time"><i class="far fa-clock"></i> 8 min read</span>
+                    </div>
+                    <a href="ai-tools-guide.html" class="card-button">Read More</a>
+                </div>
+            </article>
+
             <!-- Article Card 12 - CapCut Editing (March 20) -->
             <article class="blog-card" data-category="Video Editing" data-tags="AI Tools,Video AI,Tutorials,Workflow,AI" data-content="capcut editing timeline effects overlays speed ramping reverse trick post production filmmaking">
                 <div class="card-image">
@@ -302,12 +319,14 @@
     // Mobile menu toggle
     const navbarToggle = document.getElementById('navbarToggle');
     const navbarMenu = document.getElementById('navbarMenu');
+    const navMenu = document.querySelector('.nav-menu');
     const bgNavbar = document.querySelector('.bg-navbar');
     const navLinks = navbarMenu.querySelectorAll('.nav-link');
 
     navbarToggle.addEventListener('click', function() {
         navbarToggle.classList.toggle('active');
         navbarMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
 
     // Close menu when a link is clicked
@@ -315,6 +334,7 @@
         link.addEventListener('click', function() {
             navbarToggle.classList.remove('active');
             navbarMenu.classList.remove('active');
+            navMenu.classList.remove('active');
         });
     });
 
@@ -323,6 +343,7 @@
         if (!event.target.closest('.navbar')) {
             navbarToggle.classList.remove('active');
             navbarMenu.classList.remove('active');
+            navMenu.classList.remove('active');
         }
     });
 

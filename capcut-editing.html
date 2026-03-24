@@ -27,13 +27,13 @@
     <div class="container">
         <div class="navbar">
             <a href="/" class="logo">Art</a>
-            <button class="navbar-toggler" id="navbarToggle">
+            <button class="navbar-toggler mobile-menu-toggle" id="navbarToggle">
                 <span class="icon-bar top-bar"></span>
                 <span class="icon-bar middle-bar"></span>
                 <span class="icon-bar bottom-bar"></span>
             </button>
             <nav class="navbar-menu" id="navbarMenu">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav nav-menu">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -177,7 +177,7 @@
         <div class="related-grid">
             <article class="related-card">
                 <div class="related-image">
-                    <img src="https://images.unsplash.com/photo-1677442d019cecf8e5aa1e75bcb9d52b58e16d93?w=400&h=250&fit=crop" alt="Related Article">
+                    <img src="images/hedgehogs-in-hand.jpg" alt="Related Article">
                 </div>
                 <h3 class="related-card-title">AI Tools for Visual Creators: A Comprehensive Guide</h3>
                 <a href="index.html#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
@@ -185,7 +185,7 @@
 
             <article class="related-card">
                 <div class="related-image">
-                    <img src="https://images.unsplash.com/photo-1642132447067-e29d9f7bbf79?w=400&h=250&fit=crop" alt="Related Article">
+                    <img src="images/hedgehog.jpg" alt="Related Article">
                 </div>
                 <h3 class="related-card-title">Mastering Prompt Engineering for Better AI Results</h3>
                 <a href="index.html#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
@@ -193,7 +193,7 @@
 
             <article class="related-card">
                 <div class="related-image">
-                    <img src="https://images.unsplash.com/photo-1661717372509-4b5d57382c44?w=400&h=250&fit=crop" alt="Related Article">
+                    <img src="images/kling.jpg" alt="Related Article">
                 </div>
                 <h3 class="related-card-title">The Future of Creativity: AI and Human Collaboration</h3>
                 <a href="index.html#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
@@ -237,6 +237,33 @@
 </footer>
 
 <script src="js/dsp2.js"></script>
+<script>
+    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navbarMenu = document.getElementById('navbarMenu');
+
+    toggleButton.addEventListener('click', () => {
+        toggleButton.classList.toggle('active');
+        navbarMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            toggleButton.classList.remove('active');
+            navbarMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.navbar')) {
+            toggleButton.classList.remove('active');
+            navbarMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+</script>
 <script src="js/dsp3.js"></script>
 </body>
 </html>
