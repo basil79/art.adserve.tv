@@ -121,6 +121,7 @@ const isMobileView = () => {
 
     const adSlot1 = document.getElementById('ad-slot-1'); // 728x90
     const adSlot2 = document.getElementById('ad-slot-2'); // 728x90
+    const adSlot3 = document.getElementById('ad-slot-2'); // 728x90
 
     let adSlot4 = null; // 320x50
     // sticky bottom
@@ -257,6 +258,48 @@ const isMobileView = () => {
                     },
                     {
                         id: '6_2',
+                        adServer: {
+                            url: '/21925505877/test_display_ad_unit_top'
+                        },
+                        frequency: {
+                            type: 'REQUEST',
+                            value: 1,
+                            minutes: 0.5
+                        },
+                        cpm: 0.1,
+                        tier: 3,
+                        priority: 1
+                    },
+                ]
+            });
+        }
+
+        if(adSlot3) {
+            // TODO: 728x90
+            const placement3 = createPlacement(adSlot3, isMobileView() ? {width: 300, height: 250} : {
+                width: 728,
+                height: 90
+            });
+            const container3 = createContainer(placement3);
+
+            createSlot('3', placement3, container3, isMobileView() ? sizes1 : sizes2, {
+                data: [
+                    {
+                        id: '7_3',
+                        adServer: {
+                            url: '/23313035219/test_display_ad_unit_top'
+                        },
+                        frequency: {
+                            type: 'REQUEST',
+                            value: 1,
+                            minutes: 0.5
+                        },
+                        cpm: 0.1,
+                        tier: 3,
+                        priority: 0
+                    },
+                    {
+                        id: '6_3',
                         adServer: {
                             url: '/21925505877/test_display_ad_unit_top'
                         },
@@ -437,7 +480,7 @@ const isMobileView = () => {
 
         const slot1 = getRegisteredSlots('1');
         const slot2 = getRegisteredSlots('2');
-
+        const slot3 = getRegisteredSlots('3');
         const slot4 = getRegisteredSlots('4');
 
 
@@ -464,7 +507,7 @@ const isMobileView = () => {
 
         var displayAdsManager1;
         var displayAdsManager2;
-
+        var displayAdsManager3;
         var displayAdsManager4;
 
 
@@ -480,6 +523,8 @@ const isMobileView = () => {
 
             if(slot2) {
                 load2()
+            } else if(slot3) {
+                load3();
             } else if(slot4) {
                 load4();
             } else {
@@ -565,6 +610,53 @@ const isMobileView = () => {
             });
         }
 
+        function load3() {
+            // TODO: test
+            displayAdsManager3 = new adserve.DisplayAdsManager(slot3.container, [], options, null, (error) => {
+                if(error) {
+                    console.log(error);
+                    return;
+                }
+                console.log('DSP 3 is ready');
+                console.log('DSP 3 version is', displayAdsManager3.getVersion());
+
+                if(slot4) {
+                    load4();
+                } else {
+                    // run visibility checker
+                    runVisibilityChecker();
+                }
+
+            });
+            displayAdsManager3.addEventListener('AdImpression', () => {
+
+
+                slot3.isEmpty = false;
+                slot3.lastAdImpressionRuntime = getRuntime();
+                slot3.numFailedAdRequests = 0;
+                slot3.adCycleActive = false;
+
+                console.log('AdImpression 3');
+
+            });
+            displayAdsManager3.addEventListener('AdError', (adError) => {
+
+                slot3.isEmpty = true;
+                slot3.lastAdErrorRuntime = getRuntime();
+                slot3.numFailedAdRequests = slot3.numFailedAdRequests + 1;
+                slot3.adCycleActive = false;
+
+                console.log('AdError 3', adError);
+
+            });
+            displayAdsManager3.addEventListener('Demand.AdRequest', (tag) => {
+                console.log('Demand.AdRequest 3', 'dti', tag.id, 'cpm', tag.cpm, 'tag', tag);
+            });
+            displayAdsManager3.addEventListener('Demand.AdImpression', (tag) => {
+                console.log('Demand.AdImpression 3', 'dti', tag.id, 'cpm', tag.cpm, 'tag', tag);
+            });
+        }
+
         function load4() {
 
             displayAdsManager4 = new adserve.DisplayAdsManager(slot4.container, [], options, null, (error) => {
@@ -640,7 +732,14 @@ const isMobileView = () => {
                         });
                     }
 
-
+                    if(slotDef.adUnitId == '3') {
+                        // request ads
+                        displayAdsManager3.requestAds(slotDef.conf.data, {
+                            sizes: slotDef.sizes,
+                            geo: 'US',
+                            schain: '1.0,1!adserve.tv,001w000001flCw2AAE,1,,,'
+                        });
+                    }
 
                     if(slotDef.adUnitId == '4') {
                         // request ads
