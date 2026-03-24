@@ -34,8 +34,8 @@
             </button>
             <nav class="navbar-menu" id="navbarMenu">
                 <ul class="navbar-nav nav-menu">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdca3EG_1yz9-4LVVcBZksqA2YZ8BaPkLkVDy7zw6zf9t6VEg/viewform" target="_blank" rel="noopener">Contact</a></li>
                 </ul>
@@ -46,11 +46,12 @@
 
 <div class="article-ad-space">
     <!-- Google AdSense or other ad block goes here -->
+    <div id="ad-slot-1"></div>
 </div>
 
 <article class="article-container" data-article-slug="capcut-editing">
     <div class="article-wrapper">
-        <a href="index.html#blog" class="back-to-blog-link">
+        <a href="/#blog" class="back-to-blog-link">
             <i class="fas fa-arrow-left"></i> Back to Blog
         </a>
 
@@ -154,15 +155,15 @@
             </div>
 
             <div class="article-nav">
-                <a href="index.html#blog" class="article-nav-button prev-article" aria-label="Browse previous articles">
+                <a href="/#blog" class="article-nav-button prev-article" aria-label="Browse previous articles">
                     <i class="fas fa-chevron-left"></i>
                     <span>Previous Article</span>
                 </a>
-                <a href="index.html#blog" class="article-nav-button back-blog">
+                <a href="/#blog" class="article-nav-button back-blog">
                     <i class="fas fa-th"></i>
                     <span>Back to Blog</span>
                 </a>
-                <a href="index.html#blog" class="article-nav-button next-article" aria-label="Browse next articles">
+                <a href="/#blog" class="article-nav-button next-article" aria-label="Browse next articles">
                     <span>Next Article</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
@@ -170,6 +171,12 @@
         </div>
     </div>
 </article>
+
+<!-- Article Ad Space -->
+<div class="article-ad-space">
+    <!-- Google AdSense or other ad block goes here -->
+    <div id="ad-slot-2"></div>
+</div>
 
 <section class="related-articles">
     <div class="container">
@@ -180,7 +187,7 @@
                     <img src="images/hedgehogs-in-hand.jpg" alt="Related Article">
                 </div>
                 <h3 class="related-card-title">AI Tools for Visual Creators: A Comprehensive Guide</h3>
-                <a href="index.html#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
+                <a href="/#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
             </article>
 
             <article class="related-card">
@@ -188,7 +195,7 @@
                     <img src="images/hedgehog.jpg" alt="Related Article">
                 </div>
                 <h3 class="related-card-title">Mastering Prompt Engineering for Better AI Results</h3>
-                <a href="index.html#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
+                <a href="/#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
             </article>
 
             <article class="related-card">
@@ -196,7 +203,7 @@
                     <img src="images/kling.jpg" alt="Related Article">
                 </div>
                 <h3 class="related-card-title">The Future of Creativity: AI and Human Collaboration</h3>
-                <a href="index.html#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
+                <a href="/#blog" class="related-link" aria-label="Read more related articles">Read More →</a>
             </article>
         </div>
     </div>
@@ -214,7 +221,7 @@
             <h4 class="footer-subtitle">Quick Links</h4>
             <ul class="footer-links">
                 <li><a href="/">Home</a></li>
-                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="/#blog">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdca3EG_1yz9-4LVVcBZksqA2YZ8BaPkLkVDy7zw6zf9t6VEg/viewform" target="_blank" rel="noopener">Contact</a></li>
             </ul>
@@ -223,10 +230,10 @@
         <div class="footer-section">
             <h4 class="footer-subtitle">Follow Us</h4>
             <div class="footer-social">
-                
+
                 <a href="https://www.facebook.com/profile.php?id=61588265906757" class="social-link" target="_blank" rel="noopener" aria-label="Visit our Facebook profile"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/europeanwalks/" class="social-link" target="_blank" rel="noopener" aria-label="Visit our Instagram profile"><i class="fab fa-instagram"></i></a>
-                
+
             </div>
         </div>
     </div>
@@ -236,7 +243,6 @@
     </div>
 </footer>
 
-<script src="js/dsp2.js"></script>
 <script>
     const toggleButton = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
